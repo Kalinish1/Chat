@@ -1,0 +1,48 @@
+.message-box-recieved {
+    border-radius: 10px;
+    width: 35%; 
+    float: right; 
+    clear: both;
+    word-break: break-all;
+    margin: 2px;
+}
+
+.message-box-sent {
+    border-radius: 10px;
+    width: 35%; 
+    float: left; 
+    clear: both;
+    word-break: break-all;
+    margin: 2px;
+}
+
+.message-box {
+    height: 600px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px rgb(25, 43, 243);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(105, 230, 246);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(0, 200, 226);
+    border-radius: 10px;
+}
+
+.input-area{
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

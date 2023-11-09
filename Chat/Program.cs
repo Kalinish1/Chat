@@ -1,7 +1,23 @@
+using ChatServer.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
+
+builder.Services.AddCors(options =>
+{
+	options.AddDefaultPolicy(
+		builder =>
+		{
+			builder.WithOrigins("https://localhost:5050")
+				.AllowAnyHeader()
+				.WithMethods("GET", "POST")
+				//.SetIsOriginAllowed((host) => true)
+				.AllowCredentials();
+		});
+});
 
 var app = builder.Build();
 
@@ -20,6 +36,9 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseCors();
+
 app.MapRazorPages();
+app.MapHub<ChatHub>("/chatHub");
 
 app.Run();
